@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parte Diária da Obra</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <h2>Parte Diária da Obra</h2>
+    <form id="registroForm">
+      <input type="text" id="prefixo" placeholder="Prefixo" required />
+      <select id="turno" required>
+        <option value="">Selecione o turno</option>
+        <option value="Diurno">Diurno</option>
+        <option value="Noturno">Noturno</option>
+      </select>
+      <input type="number" id="horimetro" placeholder="Horímetro" required />
+      <input type="text" id="problema" placeholder="Problema no equipamento" />
+      <textarea id="observacoes" placeholder="Observações" rows="3"></textarea>
+      <button type="submit" class="btn">Salvar Registro</button>
+    </form>
+
+    <h3>Registros Salvos</h3>
+    <table id="registrosTabela">
+      <thead>
+        <tr>
+          <th>Prefixo</th>
+          <th>Turno</th>
+          <th>Horímetro</th>
+          <th>Problema</th>
+          <th>Observações</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button onclick="logout()" class="btn" style="margin-top: 2rem;">Sair</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
